@@ -1,0 +1,43 @@
+<div class="post">
+{{- if or (isset .Params "title") (isset .Params "text_top") }}
+  <div class="top">
+  {{- if isset .Params "title" }}
+    <a href={{ .Permalink }}><h2 class="title">{{ .Params.title }}</h2></a>
+  {{- end }}
+  {{- if isset .Params "text_top" }}
+    <p class="text_top">{{ .Params.text_top }}</p>
+  {{- end }}
+  </div>
+{{- end }}
+{{ $width := .Site.Params.mainMaxWidth }}
+{{ $quality := .Site.Params.resizeQuality }}
+{{ with .Resources.ByType "image" }}
+  <div class="gallery">
+  {{ range . }}
+    {{ $resize := printf "%sx q%s" $width $quality }}
+    {{ $img := (.Resize $resize) }}
+    <a onclick="datasrc({{ anchorize . }})" href="#{{ anchorize . }}">
+      <img src="{{ $img.Permalink }}" >
+    </a>
+    <a href="#_" id="{{ anchorize .}}" class="overlay">
+      <img src="{{ $img.Permalink }}" data-src="{{ .Permalink }}"  >
+    </a>
+  {{ end }}
+  </div>
+{{- end }}
+{{- if or (isset .Params "tags") .Content }}
+  <div class="bottom">
+  {{ .Content }}
+  {{- if isset .Params "tags" }}
+    <div class="tags">
+      <ul>
+    {{- range .Params.tags }}
+      {{- $href := print (absURL "tags/") (urlize .) }}
+        <li><a href="{{ $href }}" title="{{ . }}">#{{ . }}</a></li>
+      {{- end }}
+      </ul>
+    </div>
+  {{- end }}
+  </div>
+{{- end }}
+</div>

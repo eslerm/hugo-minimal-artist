@@ -1,0 +1,22 @@
+    <header>
+      <div id="header-top">
+        <div id="bg"></div>
+        <a id="logo" href="/">
+        {{ if os.FileExists "avatar.webp" }}
+          <img src="/avatar.webp" />
+        {{ else if os.FileExists "avatar.png" }}
+          <img src="/avatar.png" />
+        {{ else if os.FileExists "avatar.jpg" }}
+          <img src="/avatar.jpg" />
+        {{ else }}
+          <img src="/default-avatar.png" />
+        {{ end }}
+        </a>
+      </div>
+      <div id="header-bottom">
+        <a href="/"><h1>{{ .Site.Title }}</h1></a>
+        {{ if .Site.Params.subtitle }}
+        <p class="subtitle">{{ .Site.Params.subtitle }}</p>
+        {{ end }}
+      </div>
+    </header>

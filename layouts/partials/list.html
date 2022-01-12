@@ -1,0 +1,7 @@
+{{- with .Site.GetPage "/" }}
+  {{ $range := .Pages }}
+  {{ $paginator := .Paginate $range }}
+  {{ range $paginator.Pages }}
+    {{ partial "post.html" . -}}
+  {{ end -}}
+{{- end }}

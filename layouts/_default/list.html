@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main>
+  {{ $range := .Pages }}
+  {{ $paginator := .Paginate $range }}
+  {{ range $paginator.Pages }}
+    {{ partial "post.html" . }}
+  {{- end }}
+  </main>
+{{- if .Paginator.HasNext -}}
+  <a class="paginator-next-page hidden" href="{{ .Paginator.Next.URL | absURL}}">Next</a>
+{{- end -}}
+{{ end }}

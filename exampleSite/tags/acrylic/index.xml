@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>acrylic on Hugo Minimal Artist</title>
+    <link>https://hugo-minimal-artist.netlify.app/tags/acrylic/</link>
+    <description>Recent content in acrylic on Hugo Minimal Artist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 03 Oct 2021 12:24:34 -0600</lastBuildDate><atom:link href="https://hugo-minimal-artist.netlify.app/tags/acrylic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Baizhang’s Fox</title>
+      <link>https://hugo-minimal-artist.netlify.app/baizhangs-fox/</link>
+      <pubDate>Sun, 03 Oct 2021 12:24:34 -0600</pubDate>
+      
+      <guid>https://hugo-minimal-artist.netlify.app/baizhangs-fox/</guid>
+      <description>Painting by Allison Atwill.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+baseURL = "https://hugo-minimal-artist.netlify.app"
+title = "Hugo Minimal Artist"
+theme = "hugo-minimal-artist"
+
+paginate = 5
+
+[params]                     # all params must be strings!
+  subtitle = "✨ inifinite scrolling art blog theme ✨"
+  mainMaxWidth = "560"       # post width in pixels
+  resizeQuality = "90"       # image resize quality in percent
+  colorBG = "#000c1a"        # hex of background color
+  colorPost = "#001935"      # hex of post color
+  colorRegular = "#c0c7d1"   # hex of most text
+  colorImportant = "#e6ecf3" # hex of important text
+  colorHighlight = "#ff3db4" # hex of hover text
+
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+
+relativeURLS = true
+
+[taxonomies]
+  tag = "tags"
