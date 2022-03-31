@@ -6,6 +6,11 @@
 
 [Example Site](https://hugo-minimal-artist.netlify.app)
 
+## Live Sites
+
+[Kitsunebi](https://kitsunebi.app/)
+[Ditdoo](https://ditdoo.com/)
+
 ## Introduction 
 
 Minimal Artist is a lightweight art blog theme, some of its features are:
