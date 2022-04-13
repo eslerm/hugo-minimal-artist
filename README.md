@@ -8,8 +8,8 @@
 
 ## Live Sites
 
-[Kitsunebi](https://kitsunebi.app/)
-[Ditdoo](https://ditdoo.com/)
+- [Kitsunebi](https://kitsunebi.app/)
+- [Ditdoo](https://ditdoo.com/)
 
 ## Introduction 
 
