@@ -16,11 +16,14 @@
 Minimal Artist is a lightweight art blog theme, some of its features are:
 
 - Infinite Scrolling
+- Gallery Lightbox
 - Automated Photo Resizing
-- Customizable colors and background
-- No JavaScript libraries
-- No CSS framework
-- Several conditionally controlled text areas
+- Customizable Colors, Logo, and Background
+- Minimal JavaScript
+- No JavaScript Libraries
+- No CSS Framework
+- Optional Text Fields
+- Optional Google Analytics
 
 ## Requirements
 
@@ -28,9 +31,7 @@ It is necessary to use **Hugo Extended ≥ 0.87.0.**
 
 ## Installation
 
-Clone / Download this repository to `theme` folder, and edit your site config following `exampleSite/config.yaml`.
-
-*Note: Remove config.toml if there is one in the site folder.*
+Clone / Download this repository to `theme` folder, and edit your site config according to `exampleSite/config.yaml`.
 
 ## Configuration
 
@@ -40,7 +41,9 @@ Example:
 ```
 [params]                     # all params must be strings!
   subtitle = "foo"           # text that goes below title
-  mainMaxWidth = "560"       # post width in pixels
+  gtag = "G-ABCDEFGHIJ"      # optionally set a google analytics id
+  fontSize = "16"            # font size in pixels
+  mainMaxWidth = "36"        # post width in em
   resizeQuality = "90"       # image resize quality in percent
   colorBG = "#000c1a"        # hex of background color
   colorPost = "#001935"      # hex of post color
