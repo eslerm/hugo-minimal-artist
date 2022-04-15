@@ -42,8 +42,8 @@ Example:
 [params]                     # all params must be strings!
   subtitle = "foo"           # text that goes below title
   gtag = "G-ABCDEFGHIJ"      # optionally set a google analytics id
-  fontSize = "16"            # font size in pixels
-  mainMaxWidth = "36"        # post width in em
+  fontSize = 16              # font size in pixels
+  mainMaxWidth = 36          # post width in em
   resizeQuality = "90"       # image resize quality in percent
   colorBG = "#000c1a"        # hex of background color
   colorPost = "#001935"      # hex of post color
