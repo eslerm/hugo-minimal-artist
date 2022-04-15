@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ .Language }}">
-  <head>
-{{ partial "meta" . }}
-{{ partial "links" . }}
-{{ partial "js" . }}
-{{ if .IsHome }}
-    <title>{{ .Site.Title }}</title>
-{{ else }}
-    <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
-{{ end }}
-  </head>
+{{ partial "head" . }}
   <body>
 {{ partial "header" . }}
-{{ block "main" . }}{{ end }}
-{{ partial "footer" . }}
+{{- block "main" . }}{{ end }}
+{{- partial "footer" . }}
   </body>
 </html>

@@ -5,14 +5,14 @@
   --color-important: {{ site.Params.colorImportant }};
   --color-highlight: {{ site.Params.colorHighlight }};
 }
-body { padding:0; margin:0; font-size: 1.1em; line-height: 1.5em;  background-color:var(--color-bg); color:var(--color-regular); }
-p { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased !important; -moz-font-smoothing: antialiased !important; text-rendering: optimizelegibility !important; letter-spacing: .03em; margin-bottom:0; }
-h2 { margin-top:0; }
+body { padding:0; margin:0; font-size: {{ site.Params.fontSize }}px; line-height: 1.5em;  background-color:var(--color-bg); color:var(--color-regular); }
+p { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased !important; -moz-font-smoothing: antialiased !important; text-rendering: optimizelegibility !important; letter-spacing: .03em; }
+h2 { margin: 0; }
 blockquote { border-left:2px solid var(--color-important); margin:0; padding-left:1em; }
 blockquote + blockquote { padding-top:1em;margin-top:-1em; }
 a, .subtitle { color:var(--color-important); text-decoration:none;}
 a:hover {color:var(--color-highlight);}
-#header-top { height:225px; }
+#header-top { height: 13em; }
 #header-bottom {text-align:center;}
 #bg { height:75%; background-repeat:no-repeat; background-size:cover; background-position:center; }
 {{ if os.FileExists "/bg.webp" }}
@@ -24,20 +24,19 @@ a:hover {color:var(--color-highlight);}
 {{ else }}
 #bg { background-image:url("/default-bg.jpg"); }
 {{end}}
-#logo {position:absolute; top:75px; left:50%; transform:translate(-50%);}
-#logo img { -webkit-filter: drop-shadow(0.15em 0.15em 0 var(--color-bg)) drop-shadow(0.15em -0.15em 0 var(--color-bg)) drop-shadow(-0.15em 0.15em 0 var(--color-bg)) drop-shadow(-0.15em -0.15em 0 var(--color-bg)); filter: drop-shadow(0.15em 0.15em 0 var(--color-bg)) drop-shadow(0.15em -0.15em 0 var(--color-bg)) drop-shadow(-0.15em 0.15em 0 var(--color-bg)) drop-shadow(-0.15em -0.15em 0 var(--color-bg));}
+#logo {position:absolute; margin-top: -7em; left:50%; transform:translate(-50%);}
+#logo img { -webkit-filter: drop-shadow(0.15em 0.15em 0 var(--color-bg)) drop-shadow(0.15em -0.15em 0 var(--color-bg)) drop-shadow(-0.15em 0.15em 0 var(--color-bg)) drop-shadow(-0.15em -0.15em 0 var(--color-bg)); filter: drop-shadow(0.15em 0.15em 0 var(--color-bg)) drop-shadow(0.15em -0.15em 0 var(--color-bg)) drop-shadow(-0.15em 0.15em 0 var(--color-bg)) drop-shadow(-0.15em -0.15em 0 var(--color-bg)); }
 #logo img:hover { -webkit-filter: drop-shadow(0.15em 0.15em 0 var(--color-highlight)) drop-shadow(0.15em -0.15em 0 var(--color-highlight)) drop-shadow(-0.15em 0.15em 0 var(--color-highlight)) drop-shadow(-0.15em -0.15em 0 var(--color-highlight)); filter: drop-shadow(0.15em 0.15em 0 var(--color-highlight)) drop-shadow(0.15em -0.15em 0 var(--color-highlight)) drop-shadow(-0.15em 0.15em 0 var(--color-highlight)) drop-shadow(-0.15em -0.15em 0 var(--color-highlight));}
-main, footer { max-width: {{ site.Params.mainMaxWidth }}px; margin: auto; }
+main, footer { max-width: {{ site.Params.mainMaxWidth }}em; margin: auto; }
 footer { text-color: var(--color-important); }
-.post { background-color:var(--color-post); padding:0.5em; border-radius:0.3em;}
-header, .post, ul.pagination { margin-bottom:3.75em; } 
-.gallery { margin:-0.5em -0.5em -1em -0.5em; }
-.top { margin:1em 0 2em 0;}
-.bottom { margin:2em 0 1em 0;}
-.gallery img {width:100%; }
+.post { background-color:var(--color-post); border-radius:0.5em;}
+header { margin-bottom:2em; } 
+.post, ul.pagination { margin-bottom:3em; } 
+.top { padding:1em; }
+.bottom { padding:0 1em 1em 1em; margin-top: 1em; }
+.gallery img {width:100%; display:block; margin-bottom:0.5em; }
 .subtitle, .text_top { margin-bottom:1em;}
-.tags, .pagination, footer { font-size:0.75em; line-height:0.75em; }
-.tags { display:inline-table;margin:0; padding:0;}
+.tags, .pagination, footer p { font-size:0.75em; line-height:0.75em; }
 .tags ul, .pagination li { list-style-type:none; padding:0; margin-bottom:0; }
 #tags li { float:left; padding-right:1em;}
 .tags li, .pagination li { margin-right: 1em; display: inline; }
@@ -47,3 +46,17 @@ ul.pagination { padding: 0; text-align: center; }
 .overlay:target { visibility:visible; opacity:100; outline:none; cursor:default; }
 .overlay:target img { transform:scale(1); }
 .hidden { display:none; }
+
+.post p {
+	margin-bottom:0;
+	max-width: 60ch;
+  font-size: 1em;
+  line-height: calc(1ex / 0.32);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility !important;
+  letter-spacing: .03em;
+  text-align: justify;
+  hyphens: auto;
+}

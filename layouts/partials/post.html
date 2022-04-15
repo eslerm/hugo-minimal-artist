@@ -9,25 +9,25 @@
   {{- end }}
   </div>
 {{- end }}
-{{ $width := .Site.Params.mainMaxWidth }}
-{{ $quality := .Site.Params.resizeQuality }}
-{{ with .Resources.ByType "image" }}
+{{- $width := string ( mul .Site.Params.fontSize .Site.Params.mainMaxWidth ) }}
+{{- $quality := .Site.Params.resizeQuality }}
+{{- with .Resources.ByType "image" }}
   <div class="gallery">
   {{ range . }}
-    {{ $resize := printf "%sx q%s" $width $quality }}
-    {{ $img := (.Resize $resize) }}
+    {{- $resize := printf "%sx q%s" $width $quality }}
+    {{- $img := (.Resize $resize) }}
     <a onclick="datasrc({{ anchorize . }})" href="#{{ anchorize . }}">
       <img src="{{ $img.Permalink }}" >
     </a>
     <a href="#_" id="{{ anchorize .}}" class="overlay">
       <img src="{{ $img.Permalink }}" data-src="{{ .Permalink }}"  >
     </a>
-  {{ end }}
+  {{- end }}
   </div>
 {{- end }}
 {{- if or (isset .Params "tags") .Content }}
   <div class="bottom">
-  {{ .Content }}
+    {{ .Content }}
   {{- if isset .Params "tags" }}
     <div class="tags">
       <ul>
