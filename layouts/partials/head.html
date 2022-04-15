@@ -1,0 +1,32 @@
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+{{- if .IsHome }}
+    <title>{{ .Site.Title }}</title>
+{{ else }}
+    <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
+{{- end }}
+{{- if os.FileExists "favicon.ico" }}
+    <link rel="shortcut icon" href="/favicon.ico">
+{{- end }}
+{{- if os.FileExists "favicon.png" }}
+    <link rel="icon" type="image/png" href="/favicon.png">
+{{- end }}
+{{- $scss := resources.Get "style.scss" }}
+{{- $style :=  $scss | resources.ExecuteAsTemplate $scss .  | resources.ToCSS }}
+    <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
+    <script src="/infiniteScroll.js"></script>
+    <script src="/datasrc.js"></script>
+{{- with $.Site.Params.gtag }}
+{{ "<!-- Global site tag (gtag.js) - Google Analytics -->" | safeHTML }}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DGWQ0561EV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+	gtag('config', '{{ . }}');
+</script>
+{{- end }}
+  </head>

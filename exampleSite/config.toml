@@ -6,7 +6,9 @@ paginate = 5
 
 [params]                     # all params must be strings!
   subtitle = "✨ inifinite scrolling art blog theme ✨"
-  mainMaxWidth = "560"       # post width in pixels
+  # gtag = "G-ABCDEFGHIJ"    # optionally set a google analytics id
+  fontSize = 16              # font size in pixels
+  mainMaxWidth = 36          # post width in em
   resizeQuality = "90"       # image resize quality in percent
   colorBG = "#000c1a"        # hex of background color
   colorPost = "#001935"      # hex of post color

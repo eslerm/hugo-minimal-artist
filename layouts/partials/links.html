@@ -1,9 +1,0 @@
-    {{ if os.FileExists "favicon.ico" }}
-    <link rel="shortcut icon" href="/favicon.ico">
-    {{ end }}
-    {{ if os.FileExists "favicon.png" }}
-    <link rel="icon" type="image/png" href="/favicon.png">
-    {{ end }}
-{{ $scss := resources.Get "style.scss" }}
-{{ $style :=  $scss | resources.ExecuteAsTemplate $scss .  | resources.ToCSS }}
-    <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
