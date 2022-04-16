@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### WIP
+
+- Hidden post sections
+- Post documentation
+- RSS
+- Header control
+- Schema/Twitter
+
 ### Added 
 
 - Google Anlaytics gtag
@@ -21,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- exampleSite is generated instead of being pregenerated
+- exampleSite is generated instead of pregenerated
 
 ## [1.0] - 2022-01-11
 
